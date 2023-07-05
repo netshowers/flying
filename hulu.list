@@ -1,0 +1,5 @@
+  # > Hulu
+  PROCESS-NAME,com.hulu.plus
+  DOMAIN-SUFFIX,hulu.com
+  DOMAIN-SUFFIX,huluim.com
+  DOMAIN-SUFFIX,hulustream.com
