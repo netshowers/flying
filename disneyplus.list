@@ -1,6 +1,6 @@
 # 内容：DisneyPlus
 # 数量：23条
-#ref to https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/DisneyPlus.list
+# ref to https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/DisneyPlus.list
 PROCESS-NAME,com.disney.disneyplus
 USER-AGENT,Disney*
 USER-AGENT,Disney+*
