@@ -1,4 +1,5 @@
-depdg.epc.mnc260.mcc310.pub.3gppnetwork.org
-ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
-epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
-ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+# WIFI-Calling
+DOMAIN-SUFFIX,depdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
