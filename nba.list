@@ -4,6 +4,9 @@ DOMAIN,nbalpng.akamaized.net
 ## DOMAIN-SUFFIX,nba*.com
 DOMAIN-SUFFIX,nba.*.com
 DOMAIN-SUFFIX,nba.com
+DOMAIN,nbaprop.sc.omtrdc.net
+DOMAIN,rest-prod-nba.evergent.com
+DOMAIN-SUFFIX,siteintercept.qualtrics.com
 
 
 
