@@ -1,11 +1,11 @@
 DOMAIN,nba.ra3ncmyg1p.com
 DOMAIN,nba-api-cdn.opin.media
 DOMAIN,nbalpng.akamaized.net
+DOMAIN,nbaprop.sc.omtrdc.net
+DOMAIN,rest-prod-nba.evergent.com
 ## DOMAIN-SUFFIX,nba*.com
 DOMAIN-SUFFIX,nba.*.com
 DOMAIN-SUFFIX,nba.com
-DOMAIN,nbaprop.sc.omtrdc.net
-DOMAIN,rest-prod-nba.evergent.com
 DOMAIN-SUFFIX,siteintercept.qualtrics.com
 
 
