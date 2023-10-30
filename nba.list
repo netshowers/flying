@@ -1,4 +1,6 @@
 DOMAIN,nba.ra3ncmyg1p.com
+DOMAIN,nba-api-cdn.opin.media
+DOMAIN,nbalpng.akamaized.net
 ## DOMAIN-SUFFIX,nba*.com
 DOMAIN-SUFFIX,nba.*.com
 DOMAIN-SUFFIX,nba.com
