@@ -2,9 +2,9 @@
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2024-01-17 10:34:30
-# DOMAIN-SUFFIX: 9
+# DOMAIN-SUFFIX: 10
 # DOMAIN-KEYWORD: 1
-# TOTAL: 10
+# TOTAL: 11
 DOMAIN-SUFFIX,sky.com
 DOMAIN-SUFFIX,skygo.co.nz
 DOMAIN-SUFFIX,atlantis.epgsky.com
