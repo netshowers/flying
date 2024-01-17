@@ -1,10 +1,10 @@
 # NAME: SkyGO
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-01-17 10:34:30
-# DOMAIN-SUFFIX: 10
+# UPDATED: 2024-01-17 11:24:30
+# DOMAIN-SUFFIX: 11
 # DOMAIN-KEYWORD: 1
-# TOTAL: 11
+# TOTAL: 12
 DOMAIN-SUFFIX,sky.com
 DOMAIN-SUFFIX,skygo.co.nz
 DOMAIN-SUFFIX,atlantis.epgsky.com
@@ -16,4 +16,5 @@ DOMAIN-SUFFIX,nowtv.com
 DOMAIN-SUFFIX,epgsky.com
 DOMAIN-SUFFIX,skyanywhere.com
 DOMAIN-SUFFIX,bskyb.hb.omtrdc.net
+DOMAIN-SUFFIX,catchingnow.com
 
