@@ -1,0 +1,283 @@
+port: 7890
+socks-port: 7891
+mixed-port: 7892
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: '0.0.0.0:9090'
+clash-for-android:
+    append-system-dns: false
+profile:
+    tracing: true
+dns:
+    enable: true
+    enhanced-mode: fake-ip
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://1.0.0.1:853', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+
+proxy-providers:
+  BYG:
+    type: http
+    url: ""
+    interval: 86400
+    path: ./byg.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  Titan:
+    type: http
+    url: ""
+    interval: 86400
+    path: ./Titan.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  FlowerCloud:
+    type: http
+    url: ""
+    interval: 86400
+    path: ./FlowerCloud.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+      
+  MESL:
+    type: http
+    url: ""
+    interval: 86400
+    path: ./MESL.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  
+  TAG:
+    type: http
+    url: ""
+    interval: 86400
+    path: ./TAG.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+
+
+      
+proxy-groups:
+- name: Proxy
+  type: select
+  proxies: 
+  - BYG
+  - FlowerCloud
+  - Titan
+- name: BYG
+  type: select
+  proxies: 
+  use:
+  - BYG
+- name: FlowerCloud
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+- name: Titan
+  type: select
+  proxies:
+  use:
+  - Titan
+- name: Disney+
+  type: select
+  proxies:
+  - Proxy
+  - BYG
+  - FlowerCloud
+  - Titan
+- name: NETFLIX
+  type: select
+  proxies:
+  - Proxy
+  - BYG
+  - FlowerCloud
+  - Titan
+- name: Prime Video
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: 'United State|Australia|美国|澳大利亚|US|AU|悉尼|美國|UK|英国|United Kingdom|HK|香港|Hong Kong'
+- name: Au
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: 'Australia|澳大利亚|AU|悉尼'
+- name: TW
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: 'Taiwan|台湾|TW|台灣'
+- name: Star+
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: 'Brazil|Argentina|Moxico|巴西|阿根廷|墨西哥|智利|Chile|AR'
+- name: US
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: '美国|United State|US|美國'
+- name: Viu
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: '香港|Hong Kong|新加坡|Singapore|菲律宾|Philippines|SG|HK|香港'
+- name: IPTV
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: '德国|荷兰|英国|俄罗斯|波兰|瑞士|瑞典|法国|西班牙|匈牙利|UK|LU|Spain|Netherlands|Italy|Germany|United Kingdom'
+- name: Setanta
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: '乌兹别克斯坦|摩尔多瓦|菲律宾|Pilipinas'
+- name: UK
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: 'UK|英国|United Kingdom'
+- name: HK
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: 'HK|香港|Hong Kong'
+- name: Google TV
+  type: select
+  proxies:
+  - US
+  - TW
+- name: Titan Emby
+  type: select
+  proxies:
+  use:
+  - Titan
+  filter: 'JP02|US01|SG02'
+- name: SportEmby
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: '德国|Germany|法国|France'
+- name: Astro
+  type: select
+  proxies:
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: '新加坡实验性|马来西亚|Singapore|新加坡 1x'
+- name: BenTv
+  type: select
+  proxies:
+  - DIRECT
+  use:
+  - BYG
+  - FlowerCloud
+  - Titan
+  filter: '新加坡实验性|香港|Singapore|新加坡|Hong Kong|HK'
+- name: SKY
+  type: select
+  use:
+  - MESL
+  - TAG
+  filter: 'UK|英国'
+
+rule-providers:
+  ilook:
+    behavior: "classical"
+    type: http
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/LibertyLucas/Rule/main/Filter/Clash/ilook.yaml"
+    interval: 3600
+    path: ./ilook.yaml
+  Star+:
+    behavior: "classical"
+    type: http
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/LibertyLucas/Rule/main/Filter/Clash/Star%2B.yaml"
+    interval: 3600
+    path: ./Star+.yaml
+  team:
+    behavior: "classical"
+    type: http
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/LibertyLucas/Rule/main/Filter/Clash/team.yaml"
+    interval: 3600
+    path: ./team.yaml
+  light:
+    behavior: "classical"
+    type: http
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/LibertyLucas/Rule/main/Filter/Clash/light.yaml"
+    interval: 3600
+    path: ./light.yaml
+  dmtn:
+    behavior: "classical"
+    type: http
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/LibertyLucas/Rule/main/Filter/Clash/dmtn.yaml"
+    interval: 3600
+    path: ./dmtn.yaml
+  Stan:
+    behavior: "classical"
+    type: http
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/LibertyLucas/Rule/main/Filter/Clash/Stan.yaml"
+    interval: 3600
+    path: ./Stan.yaml
+    
+rules:
+- SRC-IP-CIDR,192.168.3.44/32,SKY
+- SRC-IP-CIDR,192.168.55.122/32,SKY
+#mytv super
+- DOMAIN,mytvsuperlimited.hb.omtrdc.net,HK
+- DOMAIN,mytvsuperlimited.sc.omtrdc.net,HK
+- DOMAIN-SUFFIX,mytvsuper.com,HK
+- DOMAIN-SUFFIX,tvb.com,HK
+- DOMAIN-KEYWORD,nowtv100,HK
+- DOMAIN-KEYWORD,rthklive,HK
