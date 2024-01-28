@@ -1,0 +1,598 @@
+port: 7890
+socks-port: 7891
+mixed-port: 7892
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: '0.0.0.0:9090'
+clash-for-android:
+    append-system-dns: false
+profile:
+    tracing: true
+dns:
+    enable: true
+    enhanced-mode: fake-ip
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://1.0.0.1:853', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+proxies:
+  - name: Virgin
+    type: ss
+    server: 82.28.111.226
+    port: 51931
+    cipher: aes-256-gcm
+    password: ZHBOcE9GVVM3MnlCWENUQXMzbHh4V0kwc25JdWxFdTZ2WFEwdVM0Wm91S3l5T1dtckQxZFhCUllUUjc1eHEwUw==
+proxy-providers:
+  FlowerCloud:
+    type: http
+    url: "https://api.huacloud.xyz/sub?target=clash&insert=true&emoji=true&udp=true&clash.doh=true&new_name=true&filename=Flower_SS&url=https%3A%2F%2Fapi.flowercloud.xyz%2Fosubscribe.php%3Fsid%3D9404%26token%3DaibabpOj%26sip002%3D1"
+    interval: 86400
+    path: ./FlowerCloud.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204      
+  MESL:
+    type: http
+    url: "https://api.msub.gixs.org/api/v1/client/subscribe?token=5cac175d83fdc238acac4c714eb537a6"
+    interval: 86400
+    path: ./MESL.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204  
+  TAG:
+    type: http
+    url: "https://tagcdnsub.work/api/v1/client/subscribe?token=5bd573123055a6b553b1f1088030cfc7"
+    interval: 86400
+    path: ./TAG.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+      
+proxy-groups:
+- name: Proxy
+  type: select
+  proxies: 
+  - FlowerCloud
+  - TAG
+  - MESL
+- name: FlowerCloud
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+- name: MESL
+  type: select
+  proxies:
+  use:
+  - MESL
+- name: TAG
+  type: select
+  proxies:
+  use:
+  - TAG
+- name: Disney+
+  type: select
+  proxies:
+  - Proxy
+  - FlowerCloud
+- name: NETFLIX
+  type: select
+  proxies:
+  - Proxy
+  - FlowerCloud
+- name: Prime Video
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: 'United State|Australia|美国|澳大利亚|US|AU|悉尼|美國|UK|英国|United Kingdom|HK|香港|Hong Kong'
+- name: Au
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: 'Australia|澳大利亚|AU|悉尼'
+- name: TW
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: 'Taiwan|台湾|TW|台灣'
+- name: Star+
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: 'Brazil|Argentina|Moxico|巴西|阿根廷|墨西哥|智利|Chile|AR'
+- name: US
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: '美国|United State|US|美國'
+- name: Viu
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: '香港|Hong Kong|新加坡|Singapore|菲律宾|Philippines|SG|HK|香港'
+- name: IPTV
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: '德国|荷兰|英国|俄罗斯|波兰|瑞士|瑞典|法国|西班牙|匈牙利|UK|LU|Spain|Netherlands|Italy|Germany|United Kingdom'
+- name: Setanta
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: '乌兹别克斯坦|摩尔多瓦|菲律宾|Pilipinas'
+- name: UK
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: 'UK|英国|United Kingdom'
+- name: HK
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: 'HK|香港|Hong Kong'
+- name: JP
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: 'JP|日本|日|Japan'
+- name: Google TV
+  type: select
+  proxies:
+  - US
+  - TW
+- name: SportEmby
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: '德国|Germany|法国|France'
+- name: Astro
+  type: select
+  proxies:
+  use:
+  - FlowerCloud
+  filter: '新加坡实验性|马来西亚|Singapore|新加坡 1x'
+- name: BenTv
+  type: select
+  proxies:
+  - DIRECT
+  use:  
+  - FlowerCloud
+  filter: '新加坡实验性|香港|Singapore|新加坡|Hong Kong|HK'
+- name:📺 SKY
+  type: relay
+  proxies:
+  - IPTV
+  - Virgin
+rule-providers:
+  🎯 全球直连:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml"
+    interval: 86400
+    path: ./ACL4SSR/LocalAreaNetwork.yaml
+  🎯 全球直连:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml"
+    interval: 86400
+    path: ./ACL4SSR/UnBan.yaml
+  🎯 全球直连:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml"
+    interval: 86400
+    path: ./ACL4SSR/GoogleCN.yaml
+  🎯 全球直连:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml"
+    interval: 86400
+    path: ./ACL4SSR/SteamCN.yaml
+  🎯 全球直连:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml"
+    interval: 86400
+    path: ./ACL4SSR/ChinaDomain.yaml
+  🎯 全球直连:
+    behavior: "ipcidr" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml"
+    interval: 86400
+    path: ./ACL4SSR/ChinaCompanyIp.yaml
+  🎯 全球直连:
+    behavior: "ipcidr"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIp.yaml"
+    interval: 86400
+    path: ./ChinaIp.yaml
+  🎯 全球直连:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Download.yaml"
+    interval: 86400
+    path: ./Download.yaml
+  🛑 广告拦截:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml"
+    interval: 86400
+    path: ./ACL4SSR/BanAD.yaml
+  🍃 应用净化:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml"
+    interval: 86400
+    path: ./ACL4SSR/BanProgramAD.yaml
+  📢 谷歌FCM:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml"
+    interval: 86400
+    path: ./ACL4SSR/GoogleFCM.yaml
+  Ⓜ️ 微软服务:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml"
+    interval: 86400
+    path: ./ACL4SSR/Microsoft.yaml
+  🍎 苹果服务:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml"
+    interval: 86400
+    path: ./ACL4SSR/Apple.yaml
+  📲 电报消息:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml"
+    interval: 86400
+    path: ./ACL4SSR/Telegram.yaml
+  📢 ProxyLite:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyLite.yaml"
+    interval: 86400
+    path: ./ACL4SSR/ProxyLite.yaml
+  📢 谷歌:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml"
+    interval: 86400
+    path: ./Google.yaml
+  📢 谷歌地球:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleEarth/GoogleEarth.yaml"
+    interval: 86400
+    path: ./GoogleEarth.yaml
+  📢 谷歌搜索:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleSearch/GoogleSearch.yaml"
+    interval: 86400
+    path: ./GoogleSearch.yaml
+  📢 谷歌云盘:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleDrive/GoogleDrive.yaml"
+    interval: 86400
+    path: ./GoogleDrive.yaml
+  📢 谷歌语音:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleVoice/GoogleVoice.yaml"
+    interval: 86400
+    path: ./GoogleVoice.yaml
+  📢 Dropbox:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Dropbox/Dropbox.yaml"
+    interval: 86400
+    path: ./Dropbox.yaml
+  Ⓜ️ 微软云盘:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml"
+    interval: 86400
+    path: ./OneDrive.yaml
+  📲 Whatsapp:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Whatsapp.yaml"
+    interval: 86400
+    path: ./Whatsapp.yaml
+  📲 Line:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml"
+    interval: 86400
+    path: ./Line.yaml
+  📲 KakaoTalk:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/KakaoTalk/KakaoTalk.yaml"
+    interval: 86400
+    path: ./KakaoTalk.yaml
+  💬 OpenAi:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml"
+    interval: 86400
+    path: ./OpenAi.yaml
+  🎶 网易音乐:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetEaseMusic.yaml"
+    interval: 86400
+    path: ./NetEaseMusic.yaml
+  🎮 Epic:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Epic.yaml"
+    interval: 86400
+    path: ./Epic.yaml
+  🎮 Origin:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Origin.yaml"
+    interval: 86400
+    path: ./Origin.yaml
+  🎮 Sony:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Sony.yaml"
+    interval: 86400
+    path: ./Sony.yaml
+  🎮 Nintendo:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Nintendo.yaml"
+    interval: 86400
+    path: ./Nintendo.yaml
+  🎮 Steam:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml"
+    interval: 86400
+    path: ./Steam.yaml
+  🎵 Spotify:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml"
+    interval: 86400
+    path: ./Spotify.yaml
+  💳 PayPal:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml"
+    interval: 86400
+    path: ./PayPal.yaml
+  📹 油管视频:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml"
+    interval: 86400
+    path: ./YouTube.yaml
+  📺 奈飞视频:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml"
+    interval: 86400
+    path: ./Netflix.yaml
+  📺 巴哈姆特:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bahamut.yaml"
+    interval: 86400
+    path: ./Bahamut.yaml
+  📺 FriDay:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/friDay/friDay.yaml"
+    interval: 86400
+    path: ./friDay.yaml
+  📺 HamiVideo:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HamiVideo/HamiVideo.yaml"
+    interval: 86400
+    path: ./HamiVideo.yaml
+  📺 DAZN:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DAZN/DAZN.yaml"
+    interval: 86400
+    path: ./DAZN.yaml
+  📺 ESPN:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Espn/Espn.yaml"
+    interval: 86400
+    path: ./Espn.yaml
+  📺 FuboTV:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/FuboTV/FuboTV.yaml"
+    interval: 86400
+    path: ./FuboTV.yaml
+  📺 SkySport:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/netshowers/flying/main/SkySport.yaml"
+    interval: 86400
+    path: ./SkySport.yaml
+  📺 SkyGo:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/netshowers/flying/main/skygo.yaml"
+    interval: 86400
+    path: ./skygo.yaml
+  📺 Starplus:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/netshowers/flying/main/starplus.yaml"
+    interval: 86400
+    path: ./Starplus.yaml
+  📺 Sling:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sling/Sling.yaml"
+    interval: 86400
+    path: ./Sling.yaml
+  📺 SSportPlus:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/netshowers/flying/main/ssports.yaml"
+    interval: 86400
+    path: ./ssports.yaml
+  📺 EurpSport:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/netshowers/flying/main/eurpsport.yaml"
+    interval: 86400
+    path: ./eurpsport.yaml
+  📺 DiscoveryPlus:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DiscoveryPlus/DiscoveryPlus.yaml"
+    interval: 86400
+    path: ./DiscoveryPlus.yaml
+  📺 Disney:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml"
+    interval: 86400
+    path: ./Disney.yaml
+  📺 Peacock:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Peacock/Peacock.yaml"
+    interval: 86400
+    path: ./Peacock.yaml
+  📺 PrimeVideo:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrimeVideo/PrimeVideo.yaml"
+    interval: 86400
+    path: ./PrimeVideo.yaml
+  📺 ParamountPlus:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ParamountPlus/ParamountPlus.yaml"
+    interval: 86400
+    path: ./ParamountPlus.yaml
+  📺 Hulu:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hulu/Hulu.yaml"
+    interval: 86400
+    path: ./Hulu.yaml
+  📺 BBC:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BBC/BBC.yaml"
+    interval: 86400
+    path: ./BBC.yaml
+  📺 NBA:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/netshowers/flying/main/nba.yaml"
+    interval: 86400
+    path: ./nba.yaml
+  📺 HBOMAX:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBOUSA/HBOUSA.yaml"
+    interval: 86400
+    path: ./HBOUSA.yaml
+  📺 HBOAsia:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBOAsia/HBOAsia.yaml"
+    interval: 86400
+    path: ./HBOAsia.yaml
+  📺 HBOHK:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBOHK/HBOHK.yaml"
+    interval: 86400
+    path: ./HBOHK.yaml
+  📺 哔哩哔哩:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml"
+    interval: 86400
+    path: ./BilibiliHMT.yaml
+  📺 哔哩哔哩:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml"
+    interval: 86400
+    path: ./Bilibili.yaml
+  🌏 国内媒体:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaMedia.yaml"
+    interval: 86400
+    path: ./ChinaMedia.yaml
+  🌍 国外媒体:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml"
+    interval: 86400
+    path: ./ProxyMedia.yaml
+  🚀 节点选择:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml"
+    interval: 86400
+    path: ./ProxyGFWlist.yaml
+    
+rules:
+- SRC-IP-CIDR,192.168.55.122/32,SKYGo
+- SRC-IP-CIDR,192.168.55.124/32,SKYGo
+
+- DOMAIN-SUFFIX,speedtest.net,DIRECT
+- DOMAIN-SUFFIX,trinitesolutions.com,DIRECT
+- DOMAIN-SUFFIX,emby.xfuse.top,DIRECT
+## - DOMAIN-SUFFIX,emby.xfuse.top:888,DIRECT
+- DOMAIN-SUFFIX,media.starott.com,US
+- DOMAIN-SUFFIX,googleapis.cn,US
+- DOMAIN-SUFFIX,rootsports.com,US
+- DOMAIN-SUFFIX,embylianmeng.com,JP
+- DOMAIN-SUFFIX,gettoby.com,HK
+- DOMAIN-SUFFIX,bulianglin.com,HK
+- DOMAIN-SUFFIX,gettoby.com,HK
+- DOMAIN-SUFFIX,jable.tv,HK
+- DOMAIN-KEYWORD,av,HK
+- DOMAIN-KEYWORD,69shu,US
+- DOMAIN-SUFFIX,69xinshu.com,HK
+
+
+#mytv super
+- DOMAIN,mytvsuperlimited.hb.omtrdc.net,HK
+- DOMAIN,mytvsuperlimited.sc.omtrdc.net,HK
+- DOMAIN-SUFFIX,mytvsuper.com,HK
+- DOMAIN-SUFFIX,tvb.com,HK
+- DOMAIN-KEYWORD,nowtv100,HK
+- DOMAIN-KEYWORD,rthklive,HK
