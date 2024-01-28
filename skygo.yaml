@@ -6,16 +6,16 @@
 # DOMAIN-KEYWORD: 1
 # TOTAL: 13
 payload:
-- DOMAIN-SUFFIX,sky.com
-- DOMAIN-SUFFIX,skygo.co.nz
-- DOMAIN-KEYWORD,skycdp
-- DOMAIN-SUFFIX,skycdp.com
-- DOMAIN-SUFFIX,skysports.com
-- DOMAIN-SUFFIX,skygo.skyadsmart.com
-##- DOMAIN-SUFFIX,nowtv.com
-- DOMAIN-SUFFIX,skymedia.co.uk
-- DOMAIN-SUFFIX,epgsky.com
-- DOMAIN-SUFFIX,skyanywhere.com
-- DOMAIN-SUFFIX,bskyb.hb.omtrdc.net
-- DOMAIN-SUFFIX,catchingnow.com
-- DOMAIN-SUFFIX,cws.conviva.com
+  - DOMAIN-SUFFIX,sky.com
+  - DOMAIN-SUFFIX,skygo.co.nz
+  - DOMAIN-KEYWORD,skycdp
+  - DOMAIN-SUFFIX,skycdp.com
+  - DOMAIN-SUFFIX,skysports.com
+  - DOMAIN-SUFFIX,skygo.skyadsmart.com
+  ##- DOMAIN-SUFFIX,nowtv.com
+  - DOMAIN-SUFFIX,skymedia.co.uk
+  - DOMAIN-SUFFIX,epgsky.com
+  - DOMAIN-SUFFIX,skyanywhere.com
+  - DOMAIN-SUFFIX,bskyb.hb.omtrdc.net
+  - DOMAIN-SUFFIX,catchingnow.com
+  - DOMAIN-SUFFIX,cws.conviva.com
