@@ -1,0 +1,469 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+bind-address: "*"
+mode: Rule
+log-level: info
+external-controller: 0.0.0.0:9090
+redir-port: 7892
+secret: "123456"
+#external-ui: "/usr/share/openclash/ui/dashboard"
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:7874
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 119.29.29.29
+    - 114.114.114.114
+    - 223.5.5.5
+
+#===================== OpenClash-General-Settings =====================#
+proxies:
+  - name: Virgin
+    type: ss
+    server: 82.28.111.226
+    port: 51931
+    cipher: aes-256-gcm
+    password: ZHBOcE9GVVM3MnlCWENUQXMzbHh4V0kwc25JdWxFdTZ2WFEwdVM0Wm91S3l5T1dtckQxZFhCUllUUjc1eHEwUw==
+    
+proxy-groups:
+  - name: "🚀Proxy"
+    type: "select"
+    proxies:
+      - "💍mojie-url-test"
+    use:
+      - "🐇YToo"
+      - "💍MoJie-HK-TW-SG-JP-US"
+  
+  - name: "💖Google"
+    type: "select"
+    proxies:
+      - "🚀Proxy"
+    use:
+      - "🐇YToo-HK"
+      - "💍MoJie"
+      
+  - name: "☁GD"
+    type: "select"
+    proxies:
+      - "💖Google"
+    use:
+      - "🐇YToo-HK"
+      - "💍MoJie"
+
+  - name: "☁OD"
+    type: "select"
+    proxies:
+      - "DIRECT"
+    use:
+      - "🐇YToo-HK"
+      - "💍MoJie"
+
+  - name: "🎬MI_NF"
+    type: "select"
+    proxies:
+      - "DIRECT"
+    use:
+      - "🐇YToo-US-SG-JP"     
+
+  - name: "🎬NF"
+    type: "select"
+    use:
+      - "🐇YToo"
+
+  - name: "🐱‍👤TG"
+    type: "select"
+    proxies:
+      - "🚀Proxy"
+    use:
+      - "🐇YToo-HK"
+      - "🐇YToo-US-SG-JP"
+      - "💍MoJie"
+
+  - name: "📹TikTok"
+    type: "select"
+    proxies:
+      - "💖Google"
+
+  - name: "🍎Apple"
+    type: "select"
+    proxies:
+      - "DIRECT"
+      - "🚀Proxy"
+
+  - name: "💻VPS"    
+    type: "select"
+    proxies:
+      - "DIRECT"
+    use:
+      - "🐇YToo"
+      - "💍MoJie"
+
+  - name: "🤖openAI"
+    type: "select"
+    use:
+      - "🐇YToo-US-SG-JP"   
+        
+  - name: "💊bd"
+    type: "select"
+    proxies:
+      - "DIRECT"
+    use:
+      - "💍MoJie"
+      - "🐇YToo"
+      - "☁pmCloud"
+
+  - name: "💍mojie-url-test"
+    type: url-test
+    use:
+      - "💍MoJie-HK-TW-SG-US"
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+  
+  - name: "👸Disney"
+    type: "select"
+    use:
+      - "🐇YToo-US-SG-JP"  
+  
+proxy-providers:
+  🐇YToo:
+    type: http
+    url: https://api.huacloud.xyz/sub?target=clash&insert=true&emoji=true&udp=true&clash.doh=true&new_name=true&filename=Flower_SS&url=https%3A%2F%2Fapi.flowercloud.xyz%2Fosubscribe.php%3Fsid%3D9404%26token%3DaibabpOj%26sip002%3D1
+    path: "./YToo/YToo.yaml"
+    interval: 1800 
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204   
+
+  🐇YToo-US-SG-JP:
+    type: http
+    url: ""    
+    path: "./YToo-US-SG-JP/YToo-US-SG-JP.yaml"
+    interval: 1800 
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204   
+  
+  🐇YToo-HK:
+    type: http
+    url: ""    
+    path: "./YToo-HK/YToo-HK.yaml"
+    interval: 1800 
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204  
+
+  💍MoJie:    
+    type: http
+    url: ""
+    path: "./YiYuan/YiYuan.yaml"
+    interval: 1800 
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204    
+
+  💍MoJie-HK-TW-SG-JP-US:    
+    type: http
+    url: ""
+    path: "./MoJie-HK-TW-SG-JP-US/MoJie-HK-TW-SG-JP-US.yaml"
+    interval: 1800 
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204    
+
+  💍MoJie-HK-TW-SG-US:    
+    type: http
+    url: ""
+    path: "./MoJie-HK-TW-SG-US/MoJie-HK-TW-SG-US.yaml"
+    interval: 1800 
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204    
+        
+  ☁pmCloud:    
+    type: http
+    url: ""
+    path: "./pmCloud/pmCloud.yaml"
+    interval: 1800 
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204    
+###################################################################################################################       
+#联网引用规则
+rule-providers:
+  Reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/Reject.yaml
+    interval: 86400
+
+  OpenAI:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml"
+    path: ./ruleset/OpenAI.yaml
+    interval: 86400
+  
+  Google:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml"
+    path: ./ruleset/Google.yaml
+    interval: 86400
+
+  YouTube:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml"
+    path: ./ruleset/YouTube.yaml
+    interval: 86400
+
+  Netflix:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml"
+    path: ./ruleset/Netflix.yaml
+    interval: 86400
+  
+  OneDrive:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml"
+    path: ./ruleset/OneDrive.yaml
+    interval: 86400
+
+  Proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/Proxy.yaml
+    interval: 86400
+  
+
+  #Bilibili:
+  #  type: http
+  #  behavior: classical
+  #  url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml"
+  #  path: ./ruleset/Bilibili.yaml
+  #  interval: 86400  
+  
+  DisneyPlus:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml"
+    path: ./ruleset/DisneyPlus.yaml
+    interval: 86400  
+
+  HBO:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/HBO.yaml"
+    path: ./ruleset/HBO.yaml
+    interval: 86400  
+
+  NetEaseMusic:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetEaseMusic.yaml"
+    path: ./ruleset/NetEaseMusic.yaml
+    interval: 86400    
+
+  WeChat:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Wechat.yaml"
+    path: ./ruleset/WeChat.yaml
+    interval: 86400    
+  
+  SteamCN:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml"
+    path: ./ruleset/SteamCN.yaml
+    interval: 86400  
+  
+  Steam:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml"
+    path: ./ruleset/Steam.yaml
+    interval: 86400  
+    
+  Xbox:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Xbox.yaml"
+    path: ./ruleset/Xbox.yaml
+    interval: 86400  
+
+  Apple:
+    type: http
+    behavior: domain 
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+    path: ./ruleset/Apple.yaml
+    interval: 86400  
+  
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+
+  applications:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+
+  Direct:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    path: ./ruleset/Direct.yaml
+    interval: 86400
+  
+  Private:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
+    path: ./ruleset/Private.yaml
+    interval: 86400
+  
+  GFW:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    path: ./ruleset/GFW.yaml
+    interval: 86400
+  
+  GreatFire:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/greatfire.txt"
+    path: ./ruleset/GreatFire.yaml
+    interval: 86400
+  
+  #非中国大陆使用的顶级域名列表
+  Tld-Not-CN: 
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
+    path: ./ruleset/Tld-Not-CN.yaml
+    interval: 86400
+
+  TelegramCidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    path: ./ruleset/TelegramCidr.yaml
+    interval: 86400
+  
+  #中国大陆 IP 地址列表
+  CnCidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    path: ./ruleset/CnCidr.yaml
+    interval: 86400
+  
+  #局域网 IP 及保留 IP 地址列表
+  LanCidr:
+     type: http
+     behavior: ipcidr
+     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+     path: ./ruleset/LanCidr.yaml
+     interval: 86400
+  
+
+# 规则
+rules:
+  # 自定义规则
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN-KEYWORD,now.cc,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - DOMAIN-SUFFIX,youngqfbr-my.sharepoint.com,☁OD
+  - DOMAIN-SUFFIX,qiuyi-my.sharepoint.com,☁OD
+  - DOMAIN-SUFFIX,gyvtcedu-my.sharepoint.cn,☁OD
+  - DOMAIN-SUFFIX,datasd-my.sharepoint.com,☁OD
+  - DOMAIN-KEYWORD,sharepoint.com,☁OD
+  - DOMAIN-KEYWORD,onedrive,☁OD
+  - DOMAIN-SUFFIX,googleapis.com,☁GD
+  - IP-CIDR,172.217.160.106/32,☁GD
+  - SRC-IP-CIDR,192.168.1.198/32,🎬MI_NF
+  - PROCESS-NAME,com.ss.android.ugc.trill,📹TikTok
+  - DOMAIN-SUFFIX,byteoversea.com,📹TikTok
+  - DOMAIN-SUFFIX,ibytedtos.com,📹TikTok
+  - DOMAIN-SUFFIX,ipstatp.com,📹TikTok
+  - DOMAIN-SUFFIX,muscdn.com,📹TikTok
+  - DOMAIN-SUFFIX,musical.ly,📹TikTok
+  - DOMAIN-SUFFIX,tiktok.com,📹TikTok
+  - DOMAIN-SUFFIX,tiktokcdn.com,📹TikTok
+  - DOMAIN-SUFFIX,tiktokv.com,📹TikTok
+  - DOMAIN-KEYWORD,-tiktokcdn-com,📹TikTok
+  - DOMAIN-KEYWORD,tophup.today,🚀Proxy
+  - DOMAIN-KEYWORD,cli.im,DIRECT
+
+  # ios端OpenAI规则
+  #- DOMAIN-KEYWORD,openai.com,🤖openAI
+  #- DOMAIN-KEYWORD,statsig.com,🤖openAI
+  #- DOMAIN-KEYWORD,revenuecat.com,🤖openAI
+  #- DOMAIN-KEYWORD,sentry.io,🤖openAI
+
+
+  # bd不限速规则
+  - DOMAIN-KEYWORD,juyovo.com,💊bd
+  - DOMAIN-KEYWORD,94speed.com,💊bd
+  - DOMAIN-KEYWORD,binglengdexiwang.top,💊bd
+  - IP-CIDR,139.9.95.121/32,💊bd
+  
+  # aws server rule
+  - IP-CIDR,18.163.116.27/32,💻VPS,no-resolve
+  - IP-CIDR,143.42.76.210/32,💻VPS,no-resolve
+  - IP-CIDR,172.104.32.79/32,💻VPS,no-resolve
+  - DOMAIN-KEYWORD,archer.now.cc,💻VPS,no-resolve
+
+  # 规则集命中规则 
+  #- RULE-SET,Reject,REJECT
+  - RULE-SET,Google,💖Google
+  - RULE-SET,YouTube,💖Google
+  - RULE-SET,Netflix,🎬NF
+  - RULE-SET,HBO,🎬NF
+  - RULE-SET,OneDrive,☁OD
+  - RULE-SET,DisneyPlus,👸Disney
+  - RULE-SET,Apple,🍎Apple
+  - RULE-SET,OpenAI,🤖openAI
+
+  - RULE-SET,Steam,🚀Proxy
+  - RULE-SET,Xbox,🚀Proxy
+  - RULE-SET,Proxy,🚀Proxy
+  - RULE-SET,GFW,🚀Proxy
+  - RULE-SET,GreatFire,🚀Proxy
+  - RULE-SET,Tld-Not-CN,🚀Proxy
+  - RULE-SET,TelegramCidr,🐱‍👤TG
+
+  #- RULE-SET,Bilibili,DIRECT
+  - RULE-SET,icloud,DIRECT
+  - RULE-SET,applications,DIRECT
+  - RULE-SET,Direct,DIRECT
+  - RULE-SET,Private,DIRECT
+  - RULE-SET,WeChat,DIRECT
+  - RULE-SET,SteamCN,DIRECT
+  - RULE-SET,NetEaseMusic,DIRECT
+  - RULE-SET,CnCidr,DIRECT
+  - RULE-SET,LanCidr,DIRECT
+
+  # 其它规则 
+  - GEOIP,CN,DIRECT
+  - MATCH,🚀Proxy
