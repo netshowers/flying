@@ -29,7 +29,7 @@ proxies:
 proxy-providers:
   FlowerCloud:
     type: http
-    url: "https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Fapi.huacloud.xyz%2Fsub%3Ftarget%3Dclash%26insert%3Dtrue%26emoji%3Dtrue%26udp%3Dtrue%26clash.doh%3Dtrue%26new_name%3Dtrue%26filename%3DFlower_SS%26url%3Dhttps%253A%252F%252Fapi.flowercloud.xyz%252Fosubscribe.php%253Fsid%253D9404%2526token%253DaibabpOj%2526sip002%253D1&target=clash"
+    url: https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Fapi.huacloud.xyz%2Fsub%3Ftarget%3Dclash%26insert%3Dtrue%26emoji%3Dtrue%26udp%3Dtrue%26clash.doh%3Dtrue%26new_name%3Dtrue%26filename%3DFlower_SS%26url%3Dhttps%253A%252F%252Fapi.flowercloud.xyz%252Fosubscribe.php%253Fsid%253D9404%2526token%253DaibabpOj%2526sip002%253D1&target=clash
     interval: 3600
     filter: '^(?!.*(Premium|Expire|Traffic|500.00|官 网|官网|到期|时间|流量|重置|公 告|公告|EdNovas云|用户群|使用说明|海外)).*'
     path: ./FlowerCloud.yaml
@@ -39,7 +39,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204      
   MESL:
     type: http
-    url: "https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Fmsub.go-d.cn%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D5cac175d83fdc238acac4c714eb537a6&target=clash"
+    url: https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Fmsub.go-d.cn%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D5cac175d83fdc238acac4c714eb537a6&target=clash
     interval: 3600
     filter: '^(?!.*(Premium|Expire|Traffic|500.00|官 网|官网|到期|时间|流量|重置|公 告|公告|EdNovas云|用户群|使用说明|海外)).*'
     path: ./MESL.yaml
@@ -49,7 +49,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204  
   TAG:
     type: http
-    url: "https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Ftagcdnsub.work%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D5bd573123055a6b553b1f1088030cfc7&target=clash"
+    url: https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Ftagcdnsub.work%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D5bd573123055a6b553b1f1088030cfc7&target=clash
     interval: 3600
     filter: '^(?!.*(Premium|Expire|Traffic|500.00|官 网|官网|到期|时间|流量|重置|公 告|公告|EdNovas云|用户群|使用说明|海外)).*'
     path: ./TAG.yaml
@@ -59,7 +59,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   Nex:
     type: http
-    url: "https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Fbtepdc.lol%2F%3FL2Rvd25sb2FkQ29uZmlnL0NsYXNoLmFzcHg%2FdD10cm9qYW4mZXE9d2luZG93cyZ1cms9ODhmNmE0YjMtOTMxYS00N2M5LWJhNDItZDU1NzUyZTk3YmY5Jm1tPTQ0NjYyJmY0NDBiMTY3ZDMwMzRhYzhiNTEwZmU%3D&target=clash"
+    url: https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Fbtepdc.lol%2F%3FL2Rvd25sb2FkQ29uZmlnL0NsYXNoLmFzcHg%2FdD10cm9qYW4mZXE9d2luZG93cyZ1cms9ODhmNmE0YjMtOTMxYS00N2M5LWJhNDItZDU1NzUyZTk3YmY5Jm1tPTQ0NjYyJmY0NDBiMTY3ZDMwMzRhYzhiNTEwZmU%3D&target=clash
     interval: 3600
     filter: '^(?!.*(Premium|Expire|Traffic|500.00|官 网|官网|到期|时间|流量|重置|公 告|公告|EdNovas云|用户群|使用说明|海外)).*'
     path: ./Nex.yaml
@@ -69,135 +69,135 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       
 proxy-groups:
-- name: Proxy
-  type: select
-  proxies:
-  - DIRECT 
-  - FlowerCloud
-  - TAG
-  - MESL
-  - Nex
-- name: FlowerCloud
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-- name: MESL
-  type: select
-  proxies:
-  use:
-  - MESL
-- name: TAG
-  type: select
-  proxies:
-  use:
-  - TAG
-- name: Nex
-  type: select
-  proxies:
-  use:
-  - Nex
-- name: Disney+
-  type: select
-  proxies:
-  - Proxy
-  - FlowerCloud
-- name: NETFLIX
-  type: select
-  proxies:
-  - Proxy
-  - FlowerCloud
-- name: Prime Video
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: 'United State|Australia|美国|澳大利亚|US|AU|悉尼|美國|UK|英国|United Kingdom|HK|香港|Hong Kong'
-- name: Au
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: 'Australia|澳大利亚|AU|悉尼'
-- name: TW
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: 'Taiwan|台湾|TW|台灣'
-- name: Star+
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: 'Brazil|Argentina|Moxico|巴西|阿根廷|墨西哥|智利|Chile|AR'
-- name: US
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: '美国|United State|US|美國'
-- name: Viu
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: '香港|Hong Kong|新加坡|Singapore|菲律宾|Philippines|SG|HK|香港'
-- name: IPTV
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: '德国|荷兰|英国|俄罗斯|波兰|瑞士|瑞典|法国|西班牙|匈牙利|UK|LU|Spain|Netherlands|Italy|Germany|United Kingdom'
-- name: Setanta
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: '乌兹别克斯坦|摩尔多瓦|菲律宾|Pilipinas'
-- name: UK
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: 'UK|英国|United Kingdom'
-- name: HK
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: 'HK|香港|Hong Kong'
-- name: JP
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: 'JP|日本|日|Japan'
-- name: Google TV
-  type: select
-  proxies:
-  - US
-  - TW
-- name: SportEmby
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: '德国|Germany|法国|France'
-- name: Astro
-  type: select
-  proxies:
-  use:
-  - FlowerCloud
-  filter: '新加坡实验性|马来西亚|Singapore|新加坡 1x'
-- name: BenTv
-  type: select
-  proxies:
-  - DIRECT
-  use:  
-  - FlowerCloud
-  filter: '新加坡实验性|香港|Singapore|新加坡|Hong Kong|HK'
-- name: SKY
+  - name: Proxy
+    type: select
+    proxies:
+    - DIRECT 
+    - FlowerCloud
+    - TAG
+    - MESL
+    - Nex
+  - name: FlowerCloud
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+  - name: MESL
+    type: select
+    proxies:
+    use:
+    - MESL
+  - name: TAG
+    type: select
+    proxies:
+    use:
+    - TAG
+  - name: Nex
+    type: select
+    proxies:
+    use:
+    - Nex
+  - name: Disney+
+    type: select
+    proxies:
+    - Proxy
+    - FlowerCloud
+  - name: NETFLIX
+    type: select
+    proxies:
+    - Proxy
+    - FlowerCloud
+  - name: Prime Video
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: 'United State|Australia|美国|澳大利亚|US|AU|悉尼|美國|UK|英国|United Kingdom|HK|香港|Hong Kong'
+  - name: Au
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: 'Australia|澳大利亚|AU|悉尼'
+  - name: TW
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: 'Taiwan|台湾|TW|台灣'
+  - name: Star+
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: 'Brazil|Argentina|Moxico|巴西|阿根廷|墨西哥|智利|Chile|AR'
+  - name: US
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: '美国|United State|US|美國'
+  - name: Viu
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: '香港|Hong Kong|新加坡|Singapore|菲律宾|Philippines|SG|HK|香港'
+  - name: IPTV
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: '德国|荷兰|英国|俄罗斯|波兰|瑞士|瑞典|法国|西班牙|匈牙利|UK|LU|Spain|Netherlands|Italy|Germany|United Kingdom'
+  - name: Setanta
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: '乌兹别克斯坦|摩尔多瓦|菲律宾|Pilipinas'
+  - name: UK
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: 'UK|英国|United Kingdom'
+  - name: HK
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: 'HK|香港|Hong Kong'
+  - name: JP
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: 'JP|日本|日|Japan'
+  - name: Google TV
+    type: select
+    proxies:
+    - US
+    - TW
+  - name: SportEmby
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: '德国|Germany|法国|France'
+  - name: Astro
+    type: select
+    proxies:
+    use:
+    - FlowerCloud
+    filter: '新加坡实验性|马来西亚|Singapore|新加坡 1x'
+  - name: BenTv
+    type: select
+    proxies:
+    - DIRECT
+    use:  
+    - FlowerCloud
+    filter: '新加坡实验性|香港|Singapore|新加坡|Hong Kong|HK'
+  - name: SKY
   type: relay
   proxies:
   - IPTV
@@ -589,30 +589,30 @@ rule-providers:
     path: ./ProxyGFWlist.yaml
     
 rules:
-- SRC-IP-CIDR,192.168.55.122/32,SKY
-- SRC-IP-CIDR,192.168.55.124/32,SKY
+  - SRC-IP-CIDR,192.168.55.122/32,SKY
+  - SRC-IP-CIDR,192.168.55.124/32,SKY
 
-- DOMAIN-SUFFIX,speedtest.net,DIRECT
-- DOMAIN-SUFFIX,trinitesolutions.com,DIRECT
-- DOMAIN-SUFFIX,emby.xfuse.top,DIRECT
-## - DOMAIN-SUFFIX,emby.xfuse.top:888,DIRECT
-- DOMAIN-SUFFIX,media.starott.com,US
-- DOMAIN-SUFFIX,googleapis.cn,US
-- DOMAIN-SUFFIX,rootsports.com,US
-- DOMAIN-SUFFIX,embylianmeng.com,JP
-- DOMAIN-SUFFIX,gettoby.com,HK
-- DOMAIN-SUFFIX,bulianglin.com,HK
-- DOMAIN-SUFFIX,gettoby.com,HK
-- DOMAIN-SUFFIX,jable.tv,HK
-- DOMAIN-KEYWORD,av,HK
-- DOMAIN-KEYWORD,69shu,US
-- DOMAIN-SUFFIX,69xinshu.com,HK
+  - DOMAIN-SUFFIX,speedtest.net,DIRECT
+  - DOMAIN-SUFFIX,trinitesolutions.com,DIRECT
+  - DOMAIN-SUFFIX,emby.xfuse.top,DIRECT
+  ## - DOMAIN-SUFFIX,emby.xfuse.top:888,DIRECT
+  - DOMAIN-SUFFIX,media.starott.com,US
+  - DOMAIN-SUFFIX,googleapis.cn,US
+  - DOMAIN-SUFFIX,rootsports.com,US
+  - DOMAIN-SUFFIX,embylianmeng.com,JP
+  - DOMAIN-SUFFIX,gettoby.com,HK
+  - DOMAIN-SUFFIX,bulianglin.com,HK
+  - DOMAIN-SUFFIX,gettoby.com,HK
+  - DOMAIN-SUFFIX,jable.tv,HK
+  - DOMAIN-KEYWORD,av,HK
+  - DOMAIN-KEYWORD,69shu,US
+  - DOMAIN-SUFFIX,69xinshu.com,HK
 
 
-#mytv super
-- DOMAIN,mytvsuperlimited.hb.omtrdc.net,HK
-- DOMAIN,mytvsuperlimited.sc.omtrdc.net,HK
-- DOMAIN-SUFFIX,mytvsuper.com,HK
-- DOMAIN-SUFFIX,tvb.com,HK
-- DOMAIN-KEYWORD,nowtv100,HK
-- DOMAIN-KEYWORD,rthklive,HK
+  #mytv super
+  - DOMAIN,mytvsuperlimited.hb.omtrdc.net,HK
+  - DOMAIN,mytvsuperlimited.sc.omtrdc.net,HK
+  - DOMAIN-SUFFIX,mytvsuper.com,HK
+  - DOMAIN-SUFFIX,tvb.com,HK
+  - DOMAIN-KEYWORD,nowtv100,HK
+  - DOMAIN-KEYWORD,rthklive,HK
