@@ -200,8 +200,8 @@ proxy-groups:
   - name: SKY
     type: relay
     proxies:
-      - IPTV
-      - Virgin
+    - IPTV
+    - Virgin
 rule-providers:
   LocalAreaNetwork:
     behavior: "classical"
