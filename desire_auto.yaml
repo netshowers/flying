@@ -198,10 +198,10 @@ proxy-groups:
     - FlowerCloud
     filter: '新加坡实验性|香港|Singapore|新加坡|Hong Kong|HK'
   - name: SKY
-  type: relay
-  proxies:
-  - IPTV
-  - Virgin
+    type: relay
+    proxies:
+      - IPTV
+      - Virgin
 rule-providers:
   LocalAreaNetwork:
     behavior: "classical"
