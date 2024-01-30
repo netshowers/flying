@@ -29,8 +29,9 @@ proxies:
 proxy-providers:
   FlowerCloud:
     type: http
-    url: "https://api.huacloud.xyz/sub?target=clash&insert=true&emoji=true&udp=true&clash.doh=true&new_name=true&filename=Flower_SS&url=https%3A%2F%2Fapi.flowercloud.xyz%2Fosubscribe.php%3Fsid%3D9404%26token%3DaibabpOj%26sip002%3D1"
-    interval: 86400
+    url: "https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Fapi.huacloud.xyz%2Fsub%3Ftarget%3Dclash%26insert%3Dtrue%26emoji%3Dtrue%26udp%3Dtrue%26clash.doh%3Dtrue%26new_name%3Dtrue%26filename%3DFlower_SS%26url%3Dhttps%253A%252F%252Fapi.flowercloud.xyz%252Fosubscribe.php%253Fsid%253D9404%2526token%253DaibabpOj%2526sip002%253D1&target=clash"
+    interval: 3600
+    filter: '^(?!.*(Premium|Expire|Traffic|500.00|官 网|官网|到期|时间|流量|重置|公 告|公告|EdNovas云|用户群|使用说明|海外)).*'
     path: ./FlowerCloud.yaml
     health-check:
       enable: true
@@ -38,8 +39,9 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204      
   MESL:
     type: http
-    url: "https://api.msub.gixs.org/api/v1/client/subscribe?token=5cac175d83fdc238acac4c714eb537a6"
-    interval: 86400
+    url: "https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Fmsub.go-d.cn%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D5cac175d83fdc238acac4c714eb537a6&target=clash"
+    interval: 3600
+    filter: '^(?!.*(Premium|Expire|Traffic|500.00|官 网|官网|到期|时间|流量|重置|公 告|公告|EdNovas云|用户群|使用说明|海外)).*'
     path: ./MESL.yaml
     health-check:
       enable: true
@@ -47,9 +49,20 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204  
   TAG:
     type: http
-    url: "https://tagcdnsub.work/api/v1/client/subscribe?token=5bd573123055a6b553b1f1088030cfc7"
-    interval: 86400
+    url: "https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Ftagcdnsub.work%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D5bd573123055a6b553b1f1088030cfc7&target=clash"
+    interval: 3600
+    filter: '^(?!.*(Premium|Expire|Traffic|500.00|官 网|官网|到期|时间|流量|重置|公 告|公告|EdNovas云|用户群|使用说明|海外)).*'
     path: ./TAG.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  Nex:
+    type: http
+    url: "https://proxy-provider-converter-amber-zeta.vercel.app/api/convert?url=https%3A%2F%2Fbtepdc.lol%2F%3FL2Rvd25sb2FkQ29uZmlnL0NsYXNoLmFzcHg%2FdD10cm9qYW4mZXE9d2luZG93cyZ1cms9ODhmNmE0YjMtOTMxYS00N2M5LWJhNDItZDU1NzUyZTk3YmY5Jm1tPTQ0NjYyJmY0NDBiMTY3ZDMwMzRhYzhiNTEwZmU%3D&target=clash"
+    interval: 3600
+    filter: '^(?!.*(Premium|Expire|Traffic|500.00|官 网|官网|到期|时间|流量|重置|公 告|公告|EdNovas云|用户群|使用说明|海外)).*'
+    path: ./Nex.yaml
     health-check:
       enable: true
       interval: 600
@@ -58,10 +71,12 @@ proxy-providers:
 proxy-groups:
 - name: Proxy
   type: select
-  proxies: 
+  proxies:
+  - DIRECT 
   - FlowerCloud
   - TAG
   - MESL
+  - Nex
 - name: FlowerCloud
   type: select
   proxies:
@@ -77,6 +92,11 @@ proxy-groups:
   proxies:
   use:
   - TAG
+- name: Nex
+  type: select
+  proxies:
+  use:
+  - Nex
 - name: Disney+
   type: select
   proxies:
@@ -177,55 +197,55 @@ proxy-groups:
   use:  
   - FlowerCloud
   filter: '新加坡实验性|香港|Singapore|新加坡|Hong Kong|HK'
-- name:📺 SKY
+- name: SKY
   type: relay
   proxies:
   - IPTV
   - Virgin
 rule-providers:
-  🎯 全球直连:
+  LocalAreaNetwork:
     behavior: "classical"
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml"
     interval: 86400
     path: ./ACL4SSR/LocalAreaNetwork.yaml
-  🎯 全球直连:
+  UnBan:
     behavior: "classical" 
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml"
     interval: 86400
     path: ./ACL4SSR/UnBan.yaml
-  🎯 全球直连:
+  GoogleCN:
     behavior: "classical" 
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml"
     interval: 86400
     path: ./ACL4SSR/GoogleCN.yaml
-  🎯 全球直连:
+  SteamCN:
     behavior: "classical" 
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml"
     interval: 86400
     path: ./ACL4SSR/SteamCN.yaml
-  🎯 全球直连:
+  ChinaDomain:
     behavior: "classical" 
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml"
     interval: 86400
     path: ./ACL4SSR/ChinaDomain.yaml
-  🎯 全球直连:
+  ChinaCompanyIp:
     behavior: "ipcidr" 
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml"
     interval: 86400
     path: ./ACL4SSR/ChinaCompanyIp.yaml
-  🎯 全球直连:
+  ChinaIp:
     behavior: "ipcidr"
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIp.yaml"
     interval: 86400
     path: ./ChinaIp.yaml
-  🎯 全球直连:
+  Download:
     behavior: "classical"
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Download.yaml"
@@ -537,13 +557,13 @@ rule-providers:
     url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBOHK/HBOHK.yaml"
     interval: 86400
     path: ./HBOHK.yaml
-  📺 哔哩哔哩:
+  📺 哔哩哔哩国际:
     behavior: "classical"
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml"
     interval: 86400
     path: ./BilibiliHMT.yaml
-  📺 哔哩哔哩:
+  📺 哔哩哔哩国内:
     behavior: "classical"
     type: http
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml"
@@ -569,8 +589,8 @@ rule-providers:
     path: ./ProxyGFWlist.yaml
     
 rules:
-- SRC-IP-CIDR,192.168.55.122/32,SKYGo
-- SRC-IP-CIDR,192.168.55.124/32,SKYGo
+- SRC-IP-CIDR,192.168.55.122/32,SKY
+- SRC-IP-CIDR,192.168.55.124/32,SKY
 
 - DOMAIN-SUFFIX,speedtest.net,DIRECT
 - DOMAIN-SUFFIX,trinitesolutions.com,DIRECT
