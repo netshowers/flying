@@ -130,7 +130,7 @@ proxy-groups:
 proxy-providers:
   🐇YToo:
     type: http
-    url: https://api.huacloud.xyz/sub?target=clash&insert=true&emoji=true&udp=true&clash.doh=true&new_name=true&filename=Flower_SS&url=https%3A%2F%2Fapi.flowercloud.xyz%2Fosubscribe.php%3Fsid%3D9404%26token%3DaibabpOj%26sip002%3D1
+    url: ""
     path: "./YToo/YToo.yaml"
     interval: 1800 
     health-check:
