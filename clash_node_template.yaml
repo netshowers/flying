@@ -44,6 +44,22 @@ proxies:
     short-id: a8c031ce                        # Reality short-id
   client-fingerprint: chrome                  # 自定义浏览器指纹
 
+- name: "vless-reality-vision"
+  type: vless
+  server: server
+  port: 443
+  uuid: uuid
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  servername: www.microsoft.com # REALITY servername
+  reality-opts:
+    public-key: xxx
+    short-id: xxx # optional
+  client-fingerprint: chrome # cannot be empty
+  
+
 - name: vless-reality-grpc                      # 可以自定义节点名称
   type: vless
   server: 1.2.3.4                               # 解析的域名或IP
