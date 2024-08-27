@@ -1,0 +1,8 @@
+#Stan Streaming
+
+DOMAIN,live01-stan.akamaized.net
+DOMAIN,live02-stan.akamaized.net
+DOMAIN,streamcoimg-a.akamaihd.net
+DOMAIN-SUFFIX,stan.com.au
+DOMAIN-SUFFIX,stan.video
+DOMAIN-KEYWORD,stan.akamaized.net
