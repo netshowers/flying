@@ -35,7 +35,7 @@ payload:
   # TOTAL: 1
   - DOMAIN-SUFFIX,peacocktv.com
 
- # NAME: Vix
+  # NAME: Vix
   # AUTHOR: netshow
   # REPO: https://github.com/netshowers/flying
   # UPDATED: 2024-09-24 13:57:01
