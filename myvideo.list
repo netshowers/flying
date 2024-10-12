@@ -1,4 +1,5 @@
 #myvideo
 #author:self
-#total 1
+#total 2
 DOMAIN-SUFFIX,myvideo.net.tw
+DOMAIN,cdn.plyr.io
