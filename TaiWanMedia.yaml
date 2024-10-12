@@ -21,3 +21,6 @@ payload:
   - DOMAIN-SUFFIX,ott.hinet.net
   - DOMAIN-KEYWORD,hamivideo.cdn.hinet.net
   - DOMAIN-KEYWORD,apl-hamivideo.cdn.hinet.net
+
+# NAME: MyVideo
+  - DOMAIN,myvideo.net.tw
