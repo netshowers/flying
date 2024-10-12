@@ -1,3 +1,5 @@
 payload:
 #myvideo
+#TOTAL : 2
   - DOMAIN-SUFFIX,myvideo.net.tw
+  - DOMAIN,cdn.plyr.io
