@@ -23,5 +23,6 @@ payload:
   - DOMAIN-KEYWORD,apl-hamivideo.cdn.hinet.net
 
 # NAME: MyVideo
-# TOTAL: 1
+# TOTAL: 2
   - DOMAIN-SUFFIX,myvideo.net.tw
+  - DOMAIN,cdn.plyr.io
