@@ -1,1 +1,3 @@
-
+payload:
+#myvideo
+  - DOMAIN-SUFFIX,myvideo.net.tw
