@@ -1,4 +1,5 @@
   #tsnsports
-  #Total 2
+  #Total 3
   DOMAIN-SUFFIX,tsn.ca
-  DOMAIN-SUFFIX,sports.bellmedia.ca
+  DOMAIN-SUFFIX,bellmedia.ca
+  DOMAIN-SUFFIX,bellstatic.com
