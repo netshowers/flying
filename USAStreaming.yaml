@@ -57,3 +57,5 @@ payload:
 
   # NAME: Fanatiz
   - DOMAIN-SUFFIX,nunchee.com
+  # NAME: v2rayssr
+  - DOMAIN-SUFFIX,v2rayssr.com
