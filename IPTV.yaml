@@ -1,4 +1,7 @@
 payload:
+
+#p13
+  - DOMAIN-SUFFIX,p13.cx
 #tv.team
   - DOMAIN-SUFFIX,troya.tv
   - DOMAIN-SUFFIX,troya.one
