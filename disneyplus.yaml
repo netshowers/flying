@@ -6,6 +6,7 @@ payload:
   - USER-AGENT,Disney*
   - USER-AGENT,Disney+*
   - DOMAIN,cdn..go.com
+  - DOMAIN-SUFFIX,media.dssott.com
   - DOMAIN-SUFFIX,adobedtm.com
   - DOMAIN-SUFFIX,bam.nr-data.net
   - DOMAIN-SUFFIX,bamgrid.com
