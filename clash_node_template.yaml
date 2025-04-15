@@ -27,6 +27,25 @@ dns:
     ipcidr:
       - 240.0.0.0/4
 
+# 指定当前 proxy 通过下一跳的 dialer-proxy 建立网络连接，值可以为代理组、代理（proxy-groups, proxy）的同一 name 字段
+proxies:
+- name: "SS1"
+  type: ss
+  server: server
+  port: 443
+  dialer-proxy: SS2
+  ...
+
+- name: "SS2"
+  type: ss
+  server: server
+  port: 443
+  ...
+
+rules:
+- match,SS1
+#########################
+
 # 当前 13 个主流协议节点配置模版，按需求修改，如不需要使用某协议节点，则无需删除，确保代理分流中没有该节点即可
 proxies:
 - name: vless-reality-vision                  # 可以自定义节点名称
