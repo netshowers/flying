@@ -1,10 +1,9 @@
 # 内容：DisneyPlus
-# 数量：26条
+# 数量：25条
 # ref to https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/DisneyPlus.list
 PROCESS-NAME,com.disney.disneyplus
 USER-AGENT,Disney*
 USER-AGENT,Disney+*
-DOMAIN,cdn.go.com
 DOMAIN,cdn.go.com
 DOMAIN-KEYWORD,live.dualstack
 DOMAIN,live.dualstack.dss.map.fastly.net
