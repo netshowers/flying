@@ -1,0 +1,92 @@
+/* 二刺螈 */
+
+.light,
+[data-theme="light"] {
+    /* 主题色 */
+    --nextui-primary: 350 70% 75% !important;
+    --custom-content1-opacity: 0.7 !important;
+    --custom-content2-opacity: 0.8 !important;
+    /* 写base64可以不从网络加载图片 */
+    --custom-background-image: url("https://w.wallhaven.cc/full/jx/wallhaven-jxl31y.png");
+}
+
+.dark,
+[data-theme="dark"] {
+    /* 主题色 */
+    --nextui-primary: 210 100% 45% !important;
+    --custom-content1-opacity: 0.8 !important;
+    --custom-content2-opacity: 0.7 !important;
+    /* 写base64可以不从网络加载图片 */
+    /* https://w.wallhaven.cc/full/pk/wallhaven-pk6ekj.jpg 
+    https://w.wallhaven.cc/full/d5/wallhaven-d5gjgg.jpg
+    https://w.wallhaven.cc/full/42/wallhaven-423mk9.jpg
+    https://w.wallhaven.cc/full/qz/wallhaven-qzylel.png wukong
+    https://w.wallhaven.cc/full/m3/wallhaven-m3kkkk.jpg wukong 2
+    https://w.wallhaven.cc/full/we/wallhaven-werowr.png
+    https://w.wallhaven.cc/full/d6/wallhaven-d671ej.png
+    https://w.wallhaven.cc/full/2y/wallhaven-2yxp16.jpg
+    https://w.wallhaven.cc/full/nr/wallhaven-nrromj.jpg
+    https://w.wallhaven.cc/full/x6/wallhaven-x6e21v.png
+    https://w.wallhaven.cc/full/6o/wallhaven-6o3xvx.jpg
+    https://w.wallhaven.cc/full/k7/wallhaven-k7o287.jpg
+    https://w.wallhaven.cc/full/l3/wallhaven-l315yl.jpg
+    https://w.wallhaven.cc/full/n6/wallhaven-n68gd7.jpg
+    https://w.wallhaven.cc/full/42/wallhaven-428y9g.jpg
+    https://w.wallhaven.cc/full/0p/wallhaven-0pxmwp.jpg
+    https://w.wallhaven.cc/full/ox/wallhaven-ox21gl.jpg
+    https://w.wallhaven.cc/full/2y/wallhaven-2yxp16.jpg
+    https://w.wallhaven.cc/full/4x/wallhaven-4x6w9d.jpg
+    https://w.wallhaven.cc/full/p8/wallhaven-p8gp83.jpg
+    https://w.wallhaven.cc/full/5g/wallhaven-5g2x57.jpg
+    https://w.wallhaven.cc/full/5g/wallhaven-5g22q5.png
+    https://w.wallhaven.cc/full/je/wallhaven-je82zp.jpg
+    https://w.wallhaven.cc/full/1p/wallhaven-1p7853.png
+    */
+    --custom-background-image: url("https://w.wallhaven.cc/full/1p/wallhaven-1p7853.png");
+}
+
+html {
+    --nextui-background: none !important;
+    background: transparent !important;
+    background-image: var(--custom-background-image) !important;
+    background-size: cover !important;
+    font-family: "霞鹜文楷","霞鹜臻楷","楷体", "Averia Serif Libre", "Barlow","微软雅黑","Helvetica", sans-serif, "Twemoji Mozilla" !important;
+}
+
+.bg-default {
+    opacity: var(--custom-content1-opacity) !important;
+}
+
+.bg-default-100 {
+    opacity: var(--custom-content1-opacity) !important;
+}
+
+.bg-default-200 {
+    opacity: var(--custom-content1-opacity) !important;
+}
+
+.bg-content1 {
+    opacity: var(--custom-content1-opacity) !important;
+}
+
+.bg-content2 {
+    opacity: var(--custom-content2-opacity) !important;
+}
+
+.bg-primary {
+    opacity: var(--custom-content1-opacity) !important;
+}
+
+.bg-primary\/30 {
+    background-color: hsl(var(--nextui-primary)) !important;
+    opacity: var(--custom-content1-opacity) !important;
+}
+
+.bg-secondary\/30 {
+    background-color: hsl(var(--nextui-secondary)) !important;
+    opacity: var(--custom-content1-opacity) !important;
+}
+
+.main .sticky {
+    backdrop-filter: blur(8px);
+}
