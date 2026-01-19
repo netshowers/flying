@@ -61,3 +61,7 @@ DOMAIN-SUFFIX,p13.cx
 
 #v2rayssr
 DOMAIN-SUFFIX,v2rayssr.com
+#Line IPTV
+DOMAIN-SUFFIX,line.ts-mc.xyz
+DOMAIN-SUFFIX,line.pilpil.my
+DOMAIN-SUFFIX,line.pop-sp.xyz
