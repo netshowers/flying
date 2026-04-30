@@ -54,6 +54,10 @@ payload:
   - DOMAIN-SUFFIX,movetv.com
   - DOMAIN-SUFFIX,sling.com
   - DOMAIN-SUFFIX,slinginternational.com
+  # NAME: Jira
+  # DOMAIN-SUFFIX: 1
+  # TOTAL: 1
+  - DOMAIN-SUFFIX,trinitesolutions.com
 
   # NAME: Fanatiz
   - DOMAIN-SUFFIX,nunchee.com
