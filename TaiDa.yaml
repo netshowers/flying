@@ -1,4 +1,4 @@
 # NAME: Delta
 payload:
-  - DOMAIN-KEYWORD,deltaww,DIRECT
-  - DOMAIN-SUFFIX,delta.corp,DIRECT
+  - DOMAIN-KEYWORD,deltaww
+  - DOMAIN-SUFFIX,delta.corp
