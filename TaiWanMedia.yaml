@@ -1,7 +1,7 @@
 # NAME: TaiWanMedia
 # AUTHOR: netshowers (merged & optimized)
 # DESCRIPTION: 台湾流媒体合并规则集 (巴哈姆特+friDay+HamiVideo+MyVideo+LiTV)
-# TOTAL: 15
+# TOTAL: 17
 # NOTE: 已去除通用域名 (digicert.com/gvt1.com/hinet.net),避免误拦截非台湾媒体流量
 
 payload:
@@ -17,6 +17,8 @@ payload:
 
   # >> Hami Video (中华电信)
   - DOMAIN,hls-hichannel.cdn.hinet.net
+  - DOMAIN,favoritescc-hamivideo2.cdn.hinet.net
+  - DOMAIN,tlmr-hamivideo2.cdn.hinet.net
   - DOMAIN-SUFFIX,hamivideo.hinet.net
   - DOMAIN-SUFFIX,ott.hinet.net
   - DOMAIN-KEYWORD,hamivideo.cdn.hinet.net
