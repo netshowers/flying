@@ -1,9 +1,10 @@
 # NAME: Sky Sport TV
 # AUTHOR: netshow
-# UPDATED: 2023-08-03 8:22:22
+# UPDATED: 2026-07-26 12:50:22
 # DOMAIN-SUFFIX: 3
-# TOTAL: 3
+# TOTAL: 4
 payload:
+  - DOMAIN-SUFFIX,broadpeak.io
   - DOMAIN-SUFFIX,zahs.tv
   - DOMAIN-SUFFIX,sky.ch
   - DOMAIN-SUFFIX,sky.de
