@@ -1,1 +1,9 @@
 
+# NAME: CustomMicrosoft
+# AUTHOR: netshowers
+# DESCRIPTION: 个人维护的 Microsoft 应用进程分流规则
+
+payload:
+  - PROCESS-NAME,ms-teams.exe
+  - PROCESS-NAME,Teams.exe
+  - PROCESS-NAME,msedge.exe
