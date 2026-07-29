@@ -1,1 +1,7 @@
 
+# NAME: CustomAR
+# AUTHOR: netshowers
+# DESCRIPTION: 个人维护的阿根廷策略分流规则
+
+payload:
+  - DOMAIN-SUFFIX,cws.conviva.com
