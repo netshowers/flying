@@ -1,1 +1,7 @@
 
+# NAME: CustomSkyGo
+# AUTHOR: netshowers
+# DESCRIPTION: 个人维护的 Sky Go 应用进程分流规则
+
+payload:
+  - PROCESS-NAME,Sky Go.exe
