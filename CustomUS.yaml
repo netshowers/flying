@@ -1,1 +1,23 @@
 
+# NAME: CustomUS
+# AUTHOR: netshowers
+# DESCRIPTION: 个人维护的美国策略分流规则
+
+payload:
+  - DOMAIN-SUFFIX,b2pay.now
+  - DOMAIN-SUFFIX,media.starott.com
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,googleapis.cn
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+  - DOMAIN-SUFFIX,rootsports.com
+  - DOMAIN-SUFFIX,v2rayssr.com
+  - DOMAIN-KEYWORD,69shu
+  - DOMAIN-SUFFIX,espn.com
+  - DOMAIN-SUFFIX,espn.net
+  - DOMAIN-SUFFIX,espncdn.com
+  - DOMAIN-SUFFIX,espn.co.uk
+  - DOMAIN-SUFFIX,espnqa.com
+  - DOMAIN-SUFFIX,espn.hb.omtrdc.net
+  - DOMAIN-SUFFIX,espndotcom.tt.omtrdc.net
+  - DOMAIN-SUFFIX,watchespn.com
+  - DOMAIN-SUFFIX,http.global.dns.qwilted-cds.cqloud.com
