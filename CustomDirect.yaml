@@ -1,1 +1,92 @@
 
+# NAME: CustomDirect
+# AUTHOR: netshowers
+# DESCRIPTION: 个人维护的启动资源、Windows 进程、普通域名及媒体 CDN 直连规则
+
+payload:
+  # ==================== 启动资源直连 ====================
+  - DOMAIN-SUFFIX,dsir.uk
+  - DOMAIN-SUFFIX,desirehow.com
+  - DOMAIN-SUFFIX,hashy.top
+  - DOMAIN-SUFFIX,hashop.top
+  - DOMAIN-SUFFIX,shownet.top
+  - DOMAIN-SUFFIX,shownet.cfd
+  - DOMAIN-SUFFIX,oix_nodes.com
+  - DOMAIN-SUFFIX,cloud-nodes.com
+  - DOMAIN-SUFFIX,07c06051-81fd-4aa4-a94e-a0860315df8f.org
+  - DOMAIN-SUFFIX,22b74943-12ad-47f4-b705-f2defb6ffea0.org
+  - IP-CIDR,124.221.68.73/32,no-resolve
+  - IP-CIDR,173.242.126.210/32,no-resolve
+
+  # ==================== Windows 进程直连 ====================
+  - PROCESS-NAME,lync.exe
+  - PROCESS-NAME,EXCEL.EXE
+  - PROCESS-NAME,WINWORD.EXE
+  - PROCESS-NAME,DIAInstaller.EXE
+  - PROCESS-NAME,Update.exe
+  - PROCESS-NAME,utorrent.exe
+
+  # ==================== 自定义域名直连 ====================
+  - DOMAIN-SUFFIX,nxonearth.com
+  - DOMAIN-KEYWORD,tagss
+  - DOMAIN-SUFFIX,tagxx.vip
+  - DOMAIN-SUFFIX,tagss.pro
+  - DOMAIN-SUFFIX,tagss11.pro
+  - DOMAIN-SUFFIX,siamparagon.org
+  - DOMAIN,cdn.kineticbloom.org
+  - DOMAIN-SUFFIX,naixinternet.com
+  - DOMAIN-SUFFIX,ai-163cdn.com
+  - DOMAIN-SUFFIX,xmancdn.com
+  - DOMAIN-SUFFIX,api-flowercloud.com
+  - DOMAIN-SUFFIX,wd-gold.com
+  - DOMAIN,wd-turbo.com
+  - DOMAIN-SUFFIX,nexconvert.com
+  - DOMAIN-SUFFIX,nobodys.uk
+  - DOMAIN-SUFFIX,central-world.org
+  - DOMAIN-SUFFIX,parkson-market.org
+  - DOMAIN-SUFFIX,naiixi.com
+  - DOMAIN-SUFFIX,winpowerdata.com.cn
+  - DOMAIN-SUFFIX,speedtest.net
+  - DOMAIN-SUFFIX,weixinbridge.com
+  - DOMAIN-SUFFIX,kqiulive.com
+  - DOMAIN-SUFFIX,kqiu.cn
+  - DOMAIN-SUFFIX,leisu.com
+  - DOMAIN-SUFFIX,sonos.com
+  - DOMAIN-SUFFIX,sonoschina.com
+  - DOMAIN-SUFFIX,laiye.com
+  - DOMAIN-SUFFIX,a.tiangou.xyz
+  - DOMAIN-SUFFIX,btschool.club
+  - DOMAIN-SUFFIX,liustar.click
+  - DOMAIN,s3.array2026.com
+  - DOMAIN-SUFFIX,8211992.xyz
+  - DOMAIN,pro.dadagay.com
+  - DOMAIN-SUFFIX,223789.xyz
+  - DOMAIN,cdn.daobi.xyz
+  - DOMAIN,amg.jiedaibao.gs
+  - DOMAIN,fxt.jiedaibao.gs
+  - DOMAIN,apac.irisnb.com
+  - DOMAIN,ustream.irisnb.com
+  - DOMAIN,iris4837.5203166.xyz
+  - DOMAIN,irisus.5203166.xyz
+  - DOMAIN,ar.siepro.uk
+  - DOMAIN,ck.siepro.uk
+  - DOMAIN-SUFFIX,randallanjie.com
+  - DOMAIN-SUFFIX,micu.hk
+  - DOMAIN-SUFFIX,uhdnow.com
+  - DOMAIN,mlc.once.im
+
+  # ==================== Emby 与媒体 CDN 直连 ====================
+  - DOMAIN,cdn.lilyemby.com
+  - DOMAIN,precdns.cn2gias.uk
+  - DOMAIN-SUFFIX,syemby.com
+  - DOMAIN-SUFFIX,b.115cdn.de
+  - DOMAIN-SUFFIX,a.115cdn.de
+  - DOMAIN-SUFFIX,c.115cdn.de
+  - DOMAIN,cdn.sportemby.com
+  - DOMAIN,emby2.sadchicktv.com
+  - DOMAIN,abc.sexemby.com
+  - DOMAIN,a.sexemby.com
+  - DOMAIN,b.sexemby.com
+  - DOMAIN,c.sexemby.com
+  - DOMAIN,zy.lyezi.xyz
+  - DOMAIN,bzy.lyezi.xyz
