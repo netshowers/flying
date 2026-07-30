@@ -1,0 +1,8 @@
+
+# NAME: CustomJP
+# AUTHOR: netshowers
+# DESCRIPTION: 个人维护的日本策略分流规则
+
+payload:
+  - DOMAIN-SUFFIX,dmm.co.jp
+  - DOMAIN,pe.cn2gias.uk

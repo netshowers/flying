@@ -1,0 +1,11 @@
+
+# NAME: CustomAU
+# AUTHOR: netshowers
+# DESCRIPTION: 个人维护的澳大利亚策略分流规则
+
+payload:
+  - DOMAIN-SUFFIX,stan.akamaized.net
+  - DOMAIN,awslive01.stan.video
+  - DOMAIN,awslive02.stan.video
+  - DOMAIN,fastlylive01.stan.video
+  - DOMAIN,fastlylive02.stan.video
