@@ -27,6 +27,7 @@ payload:
   - PROCESS-NAME,utorrent.exe
 
   # ==================== 自定义域名直连 ====================
+  - DOMAIN-SUFFIX,api-huacloud.dev
   - DOMAIN-SUFFIX,nxonearth.com
   - DOMAIN-KEYWORD,tagss
   - DOMAIN-SUFFIX,tagxx.vip
