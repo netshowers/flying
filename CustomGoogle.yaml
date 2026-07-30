@@ -1,7 +1,0 @@
-
-# NAME: CustomGoogle
-# AUTHOR: netshowers
-# DESCRIPTION: 个人维护的 Google 服务分流规则
-
-payload:
-  - DOMAIN-SUFFIX,mtalk.google.com

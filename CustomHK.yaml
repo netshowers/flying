@@ -1,9 +1,0 @@
-
-# NAME: CustomHK
-# AUTHOR: netshowers
-# DESCRIPTION: 个人维护的香港策略分流规则
-
-payload:
-  - DOMAIN-SUFFIX,gettoby.com
-  - DOMAIN-SUFFIX,bulianglin.com
-  - DOMAIN-SUFFIX,69xinshu.com
