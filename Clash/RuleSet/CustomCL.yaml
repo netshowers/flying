@@ -1,1 +1,8 @@
 
+# NAME: CustomCL
+# AUTHOR: netshowers
+# DESCRIPTION: 个人维护的智利策略分流规则
+
+payload:
+  - DOMAIN-SUFFIX,cws.conviva.com
+  
