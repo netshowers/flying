@@ -13,6 +13,7 @@ payload:
   - DOMAIN-SUFFIX,shownet.cfd
   - DOMAIN-SUFFIX,oix_nodes.com
   - DOMAIN-SUFFIX,cloud-nodes.com
+  - DOMAIN,api.prodigal4936.com
   - DOMAIN-SUFFIX,07c06051-81fd-4aa4-a94e-a0860315df8f.org
   - DOMAIN-SUFFIX,22b74943-12ad-47f4-b705-f2defb6ffea0.org
   - IP-CIDR,124.221.68.73/32,no-resolve
