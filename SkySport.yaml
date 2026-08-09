@@ -5,6 +5,7 @@
 # TOTAL: 4
 payload:
   - DOMAIN-SUFFIX,broadpeak.io
+  - DOMAIN-SUFFIX,nagra.com
   - DOMAIN-SUFFIX,zahs.tv
   - DOMAIN-SUFFIX,sky.ch
   - DOMAIN-SUFFIX,sky.de
