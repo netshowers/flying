@@ -9,3 +9,4 @@ payload:
   - DOMAIN,awslive02.stan.video
   - DOMAIN,fastlylive01.stan.video
   - DOMAIN,fastlylive02.stan.video
+  - DOMAIN-SUFFIX,stan.com.au
