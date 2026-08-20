@@ -4,7 +4,7 @@
 # DESCRIPTION: 个人维护的澳大利亚策略分流规则
 
 payload:
-  - DOMAIN-SUFFIX,stan.akamaized.net
+  - DOMAIN-SUFFIX,akamaized.net  
   - DOMAIN,awslive.stan.video
   - DOMAIN,awslive01.stan.video
   - DOMAIN,awslive02.stan.video
@@ -12,3 +12,4 @@ payload:
   - DOMAIN,fastlylive02.stan.video
   - DOMAIN-SUFFIX,stan.video
   - DOMAIN-SUFFIX,stan.com.au
+  - DOMAIN-SUFFIX,stan.akamaized.net
