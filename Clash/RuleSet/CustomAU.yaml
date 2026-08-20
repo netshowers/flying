@@ -5,8 +5,10 @@
 
 payload:
   - DOMAIN-SUFFIX,stan.akamaized.net
+  - DOMAIN,awslive.stan.video
   - DOMAIN,awslive01.stan.video
   - DOMAIN,awslive02.stan.video
   - DOMAIN,fastlylive01.stan.video
   - DOMAIN,fastlylive02.stan.video
+  - DOMAIN-SUFFIX,stan.video
   - DOMAIN-SUFFIX,stan.com.au
