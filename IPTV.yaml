@@ -1,5 +1,6 @@
 payload:
-
+#DAZN
+  - DOMAIN,dazn.haycker.eu.org
 #p13
   - DOMAIN-SUFFIX,p13.cx
 #tv.team
