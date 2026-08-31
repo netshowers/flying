@@ -18,6 +18,7 @@ payload:
   - DOMAIN-SUFFIX,22b74943-12ad-47f4-b705-f2defb6ffea0.org
   - IP-CIDR,124.221.68.73/32,no-resolve
   - IP-CIDR,173.242.126.210/32,no-resolve
+  - IP-CIDR,151.242.183.12/32,no-resolve
 
   # ==================== Windows 进程直连 ====================
   - PROCESS-NAME,lync.exe
