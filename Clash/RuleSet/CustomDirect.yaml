@@ -27,6 +27,7 @@ payload:
   - PROCESS-NAME,DIAInstaller.EXE
   - PROCESS-NAME,Update.exe
   - PROCESS-NAME,utorrent.exe
+  - PROCESS-NAME,miyo.exe
 
   # ==================== 自定义域名直连 ====================
   - DOMAIN-SUFFIX,miguvideo.com
