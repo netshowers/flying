@@ -32,7 +32,7 @@ payload:
 
   # ==================== 自定义域名直连 ====================
   - DOMAIN-SUFFIX,miguvideo.com
-  - DOMAIN-SUFFIX,dataimpulse
+  - DOMAIN-SUFFIX,dataimpulse.com
   - DOMAIN-SUFFIX,zijieapi.com
   - DOMAIN-SUFFIX,api-huacloud.dev
   - DOMAIN-SUFFIX,nxonearth.com
