@@ -1,5 +1,5 @@
   #tsnsports
-  #Total 7
+  #Total 8
   DOMAIN-SUFFIX,tsn.ca
   DOMAIN-SUFFIX,bellmedia.ca
   DOMAIN-SUFFIX,bellstatic.com
@@ -7,3 +7,4 @@
   DOMAIN-SUFFIX,9c9media.com
   DOMAIN-KEYWORD,9c9media
   DOMAIN-KEYWORD,tsn
+  DOMAIN-SUFFIX,ccaiplatform.com
