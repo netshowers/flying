@@ -1,7 +1,8 @@
 payload:
   #tsnsports
-  #Total 7
+  #Total 8
   - DOMAIN-SUFFIX,tsn.ca
+  - DOMAIN-SUFFIX,ccaiplatform.com
   - DOMAIN-SUFFIX,bellmedia.ca
   - DOMAIN-SUFFIX,bellstatic.com
   - DOMAIN-SUFFIX,9c9media.ca
