@@ -84,6 +84,7 @@ payload:
   - DOMAIN,mlc.once.im
 
   # ==================== Emby 与媒体 CDN 直连 ====================
+  - DOMAIN,x.emby.pro
   - DOMAIN,cdn.lilyemby.com
   - DOMAIN,precdns.cn2gias.uk
   - DOMAIN-SUFFIX,syemby.com
