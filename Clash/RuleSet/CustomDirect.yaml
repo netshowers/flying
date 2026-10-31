@@ -5,6 +5,11 @@
 
 payload:
   # ==================== 启动资源直连 ====================
+  - DOMAIN,ghfast.top
+  - DOMAIN,gh-proxy.com
+  - DOMAIN,gh.llkk.cc
+  - DOMAIN,ghproxy.net
+  - DOMAIN,cdn.jsdelivr.net
   - DOMAIN-SUFFIX,dsir.uk
   - DOMAIN-SUFFIX,desirehow.com
   - DOMAIN-SUFFIX,hashy.top
