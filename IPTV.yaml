@@ -3,6 +3,7 @@ payload:
   - DOMAIN,dazn.haycker.eu.org
 #p13
   - DOMAIN-SUFFIX,p13.cx
+  - DOMAIN,cdn.nightpluto.com
 #tv.team
   - DOMAIN-SUFFIX,troya.tv
   - DOMAIN-SUFFIX,troya.one
