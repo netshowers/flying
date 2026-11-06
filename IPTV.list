@@ -58,6 +58,7 @@ IP-CIDR,122.254.0.0/12
 
 #p13
 DOMAIN-SUFFIX,p13.cx
+DOMAIN,cdn.nightpluto.com
 
 #v2rayssr
 DOMAIN-SUFFIX,v2rayssr.com
