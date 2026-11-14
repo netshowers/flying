@@ -8,6 +8,7 @@ payload:
   - DOMAIN,ghfast.top
   - DOMAIN,gh-proxy.com
   - DOMAIN,gh.llkk.cc
+  - DOMAIN-SUFFIX,bhswh.com
   - DOMAIN,ghproxy.net
   - DOMAIN,cdn.jsdelivr.net
   - DOMAIN-SUFFIX,dsir.uk
