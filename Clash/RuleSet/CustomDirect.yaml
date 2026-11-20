@@ -6,7 +6,8 @@
 payload:
   # ==================== 启动资源直连 ====================
   - DOMAIN,ghfast.top
-  - DOMAIN,gh-proxy.com
+  - DOMAIN-SUFFIX,gh-proxy.com
+  - DOMAIN,v4.gh-proxy.org
   - DOMAIN,gh.llkk.cc
   - DOMAIN-SUFFIX,bhswh.com
   - DOMAIN,ghproxy.net
