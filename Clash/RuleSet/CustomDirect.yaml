@@ -8,6 +8,7 @@ payload:
   - DOMAIN,ghfast.top
   - DOMAIN-SUFFIX,gh-proxy.com
   - DOMAIN,v4.gh-proxy.org
+  - DOMAIN-SUFFIX,immtele.com
   - DOMAIN,gh.llkk.cc
   - DOMAIN-SUFFIX,bhswh.com
   - DOMAIN,ghproxy.net
